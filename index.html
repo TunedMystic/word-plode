@@ -40,18 +40,23 @@
                </div>
 
                 <div id="page-content">
-                    <h2 id="renderedText" class = "changableText">{ Rendered Text goes here }</h2>
+                    <div id="renderedTextP">
+                       <h2 id="renderedText" class = "changableText">{ Rendered Text goes here }</h2>
+                    </div>
                     <div id="inputSection">
 
-                         <input id="explodeInput" type = "text" placeholder ="Write Something here">
-                         <button id="explodeButton">Explode!</button>
+                         <input id="explodeInput" type="text" placeholder="Write Something here" maxlength="30">
+                         <button id="explodeButton" onclick="testExplode();">Explode!</button>
                       
                     </div>
                 </div>
 
                 <footer id="page-footer">
                   <ul id = "footerList">
-                    <li id = "creator">created by Sandeep Jadoonanan</li>
+                    <li id = "creator">created by 
+                      <p><a href = "#">Sandeep Jadoonanan</a></p>
+                       &copy; 2014
+                    </li>
                     <li id = "footerShare">
                       <ul>
                         <li id = "footShareText">Share This</li>
