@@ -256,14 +256,16 @@ body {
 }
 
 .changableText {
-    -webkit-transition-property: -webkit-transform;
-    -webkit-transition-duration: 900ms;
-    -webkit-transition-timing-function: cubic-bezier(.1,.81,.8,.93);
+    -webkit-transition-property: -webkit-transform, opacity;
+    -webkit-transition-duration: 900ms, 900ms;
+    -webkit-transition-timing-function: cubic-bezier(.1,.81,.8,.93), cubic-bezier(0.320, -0.015, 0.960, 0.415);
+
+    display: inline-block;
 }
 
-.changableText span {
+/*.changableText span {
    display: inline-block;
-}
+}*/
 
 
 

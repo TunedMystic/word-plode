@@ -38,8 +38,12 @@ function randomShoot(thing) {
     );
   return "(" + theX + "px, " + theY + "px)";*/
   var transformValue = "(" + theX + "px, " + theY + "px)";
-  console.log(transformValue);
-  $(thing).css("transform", "translate" + transformValue);
+  //console.log(transformValue);
+
+  /// I had to change "transform" into "-webkit-transform" for it to work!
+  /// NOTE: I will have to specify the other vendor prefixes...
+  $(thing).css("-webkit-transform", "translate" + transformValue);
+  $(thing).css("opacity", "0");
 }
 
 /// VAR: "thing" -> css selector
@@ -176,6 +180,13 @@ $("#renderedTextP").jrumble({
    x: 2,
    y: 4,
    rotation: 5
+});
+
+$("#explodeInput").bind("keydown", function(event){
+    if(event.keyCode == 13) {
+       console.log("Exploding!!");
+       explodeText();
+    }
 });
 
 /// $("#explodeInput").bind("input", updateInput);
