@@ -1,6 +1,27 @@
+
+/// ** -------- Variables -------- **
+
+/// Random tagline phrases
+var taglinePhrases = [
+   "Wordiness is Explodiness!",
+   "Do not try this at home!",
+   "It's like Expelliarmus, for words!",
+   "Take a break, and explode some words!",
+   "99% more effective than the other leading brand!",
+   "But wait, there's more!",
+   "Expect the unexpected!",
+];
+
+var emptyText = {"color": "#BCB465"};
+var occupiedText = {"color": "#222"};
+
+/// --------------------------------
+
+/// ** -------- Functions -------- **
+
 // Generates a random number
 function ran(min, max) {
-  return Math.random() * (max - min) + min;
+  return Math.floor( Math.random() * (max - min) + min );
 }
 
 // Converts from degrees to radians.
@@ -21,45 +42,28 @@ function randomShoot(thing) {
   var newX = distance * Math.cos(angle);
   var newY = distance * Math.sin(angle);
 
-  /// Merge the value with the existing location
-  //var theX = $(thing).offset()["left"] + newX;
-  //var theY = $(thing).offset()["top"] + newY;
   var theX = newX;
   var theY = newY;
-  /*console.log(
-    "angle: " + angle + "\n" +
-    "distance: " + distance + "\n" +
-    "newX: " + newX + "\n" +
-    "newY: " + newY + "\n" +
-    "origX: " + $(thing).offset()["left"] + "\n" +
-    "origY: " + $(thing).offset()["top"] + "\n" +
-    "theX: " + theX + "\n" +
-    "theY: " + theY
-    );
-  return "(" + theX + "px, " + theY + "px)";*/
   var transformValue = "(" + theX + "px, " + theY + "px)";
-  //console.log(transformValue);
 
-  /// I had to change "transform" into "-webkit-transform" for it to work!
-  /// NOTE: I will have to specify the other vendor prefixes...
-  $(thing).css("-webkit-transform", "translate" + transformValue);
+  /// Apply the CSS transition property.
+  /// Cross-browser goodness!
+  $(thing).css({
+    "-webkit-transform": "translate" + transformValue,
+    "-moz-transform"   : "translate" + transformValue,
+    "-o-transform"     : "translate" + transformValue,
+    "transform"        : "translate" + transformValue
+  });
   $(thing).css("opacity", "0");
 }
 
+/// Applies a random CSS translate on each span of a 'lettered' text.
 /// VAR: "thing" -> css selector
 function explode(thing) {
    console.log("Explode start");
 
-   if( $("#renderedText").children().length == 0 ) {
-      console.log("NO CHILDREN");
-   }
-   else {
-      console.log("Children YES!!");
-   }
-
    $(thing + " span").each(function(i, el){
      /// Apply a random translation to each span
-     //console.log( randomShoot(el) );
      randomShoot(el);
    });
    ///$("#word").trigger("webkitAnimationEnd");
@@ -84,6 +88,7 @@ function fillWhitespace(thing) {
    return txt2;
 }
 
+/// Break some text into individual characters.
 /// VAR: "thing" -> css selector
 function letter(thing) {
    console.log("Lettering start");
@@ -93,17 +98,23 @@ function letter(thing) {
    return;
 }
 
+/// Makes "Cool Text" (When you hover over it, it rotates...).
+/// VAR: "thing" -> css selector
+function coolText(thing) {
+  $(thing).lettering().children("span").addClass("coolText");
+}
+
 /// Takes the inputbox text and puts in the 'big-font' section
 function updateInput() {
    if( $("#explodeInput").val() == "" ) {
       $("#renderedText").text("...This will explode!!");
+      $("#renderedText").css(emptyText);
    }
    else {
       $("#renderedText").text( $("#explodeInput").val() );
+      $("#renderedText").css(occupiedText);
    }
 }
-
-var tag = "#renderedText";
 
 /// Explodes the 'big-font' text
 function explodeText() {
@@ -112,49 +123,29 @@ function explodeText() {
       console.log("an input must be entered...");
    }
    else {
-      /*letter("#renderedText");
-      setTimeout(function() {
-         explode("#renderedText")
-      }, 100);*/
-      ///$.when( letter("#renderedText") ).then( explode("#renderedText") );
-      /*$( letter("#renderedText") ).promise().done(function() {
-         explode("#renderedText");
-      });
-      $.when( letter("#renderedText") ).done(function() {
-         explode("#renderedText")
-      });*/
 
-      
-
-
-      /*letter("#renderedText");
-
-       /// Start rumbling
-      $("#renderedTextP").trigger("startRumble");
-
-      /// Wait half a second, then stop it
-      setTimeout(function() {
-         $("#renderedTextP").trigger("stopRumble")
-      }, 500);
-
-      explode("#renderedText");*/
-
+      /// Break the text into individual characters
       setTimeout(function() {
          letter("#renderedText");
+         lettersEndEvent();
       }, 40);
 
+
+      /// Begin Rumbling the text
       setTimeout(function() {
          console.log("start start");
          $("#renderedTextP").trigger("startRumble");
          console.log("start stop");
       }, 50);
 
+      /// Stop Rumbling the text
       setTimeout(function() {
          console.log("stop start");
          $("#renderedTextP").trigger("stopRumble");
          console.log("stop stop");
       }, 550);
 
+      /// Explode the text randomly
       setTimeout(function() {
          explode("#renderedText");
       }, 560);
@@ -162,41 +153,74 @@ function explodeText() {
    }
 }
 
-var exp = function() {
-   explodeText();
-}
-
-var xp = function() {
-   explode("#renderedText");
-}
-
-var lt = function() {
-   letter("#renderedText");
-}
-
-$("#explodeInput").bind("input", updateInput);
-
-$("#renderedTextP").jrumble({
-   x: 2,
-   y: 4,
-   rotation: 5
-});
-
-$("#explodeInput").bind("keydown", function(event){
-    if(event.keyCode == 13) {
-       console.log("Exploding!!");
-       explodeText();
-    }
-});
-
-/// $("#explodeInput").bind("input", updateInput);
-
-/*var p;
-$(document).ready(function() {
-  $("#renderedText").lettering().children("span").addClass("changableText");
-  p = $("#renderedText span")[0];
-
-  $("#renderedText span:eq(0)").on("webkitTransitionEnd", function() {
+/// Take action when the animation ends.
+function lettersEndEvent() {
+  $("#renderedText span:eq(0)").on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
     console.log("...The animation has ended");
+    $("#explodeInput").val("");
+    updateInput();
   });
-});*/
+}
+
+/// Display a random tagline every 'x' seconds.
+/// 'x' = 7 seconds
+function randomTagline() {
+  setInterval(function() {
+    $("#page-tagline p").fadeOut("slow", function() {
+      $("#page-tagline p").text( taglinePhrases[ran(0, taglinePhrases.length)] );
+      $("#page-tagline p").fadeIn("slow");
+    });
+  }, 7000);
+}
+
+/// --------------------------------
+
+/// ** -------- Actions -------- **
+
+/// Bindings and Listeners
+$(document).ready(function() {
+  /// Each time the input changes, run the 'updateInput' function
+  $("#explodeInput").bind("input", updateInput);
+
+  /// When the explode is clicked, run the 'explodeText' function
+  $("#explodeButton").bind("click", explodeText);
+
+  /// When the [Enter] key is pressed, run the 'explodeText' function
+  $("#explodeInput").bind("keydown", function(event){
+      if(event.keyCode == 13) {
+         console.log("Exploding!!");
+         explodeText();
+      }
+  });
+
+});
+
+/// Actions
+$(document).ready(function() {
+
+  /// Set the initial text of the "#renderedText"
+  updateInput();
+
+  /// Set a random tagline
+  $("#page-tagline p").text( taglinePhrases[ran(0, taglinePhrases.length)] );
+  randomTagline();
+
+  /// Set-up 'CoolText'
+  /// .. Header
+  coolText("#page-head h1");
+  /// .. Header nav
+  $("#page-nav ul li a").each(function(){
+     coolText( $(this) );
+  });
+  /// .. My name
+  coolText("#creator p a");
+  /// .. "Share This"
+  coolText("#footShareText");
+
+  /// Set-up the '#renderedText' to rumble
+  $("#renderedTextP").jrumble({
+     x: 2,
+     y: 4,
+     rotation: 5
+  });
+});
