@@ -90,14 +90,22 @@ body {
     font-family: "Lucida Sans Unicode";
 }
 
+h1, h2 {
+    text-shadow: 3px 2px 1px rgba(100, 95, 95, 0.82);
+}
+
 #page-wrap {
-    width: 88%;
-    min-width: 950px;
+    /*width: 88%;
+    min-width: 950px;*/
+    width: 1024px;
+    min-width: 460px;
     height: auto;
-    padding: 17px 17px 10px 17px;
+    padding: 17px 17px 17px 17px;
     margin: 0 auto;
 
-    box-shadow: 0 0 0 1px black inset;
+    /*box-shadow: 0 0 0 1px black inset;*/
+    margin-top: 10px;
+    border: 6px dashed rgb(234, 196, 85);
 }
 
 #page-head, #page-footer {
@@ -132,15 +140,15 @@ body {
 
 #footerList #creator {
     float: left;
-    font-style: italic;
-    margin-top: 15px;
+    /*font-style: italic;*/
+    margin-top: 18px;
     margin-left: 0px;
 }
 
 #footerList {
     overflow: auto;
     margin: 0 auto;
-    width: 95%;
+    width: 99%;
 }
 
 #creator {
@@ -166,6 +174,10 @@ body {
     float: right;
 }
 
+#footerShare ul {
+    margin-top: 5px;
+}
+
 #footerShare ul li {
     vertical-align: top;
 }
@@ -175,7 +187,7 @@ body {
     font-size: 120%;
     display: inline-block;
     margin-top: 0px;
-    margin-top: 15px;
+    margin-top: 13px;
 }
 
 #page-nav ul {
@@ -222,6 +234,38 @@ body {
     overflow: hidden;
 }
 
+#page-notsupported {
+    background-color: #DCD081;
+    padding: 10px;
+    margin-top: 5px;
+    text-align: center;
+    font-family: "Helvetica";
+    font-size: 130%;
+}
+
+#page-notsupported h2 {
+    margin: 10px 0px 10px 0px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 240%;
+}
+
+#page-notsupported p {
+    margin: 10px 0px 10px 0px;
+}
+
+#page-notsupported hr {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 40%;
+    border-style: none none;
+    background-color: #353333;
+}
+
+#text-helpful {
+    margin-top: 50px !important;
+}
+
+
 #renderedText {
     margin: 0 auto;
     margin-top: 135px;
@@ -233,7 +277,7 @@ body {
 
 #inputSection {
     margin-top: 120px;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
     vertical-align: top;
 }
 
@@ -263,10 +307,56 @@ body {
     color:    #999;
 }
 
-#explodeButton {
+#explodeButtonOriginal {
     height: 62px;
     margin-left: 20px;
     vertical-align: top;
+}
+
+/* ----------------------------------------- */
+
+#explodeButton {
+    background-color:#dae6e4;
+    -webkit-border-top-left-radius:1px;
+    -moz-border-radius-topleft:1px;
+    border-top-left-radius:1px;
+    -webkit-border-top-right-radius:1px;
+    -moz-border-radius-topright:1px;
+    border-top-right-radius:1px;
+    -webkit-border-bottom-right-radius:1px;
+    -moz-border-radius-bottomright:1px;
+    border-bottom-right-radius:1px;
+    -webkit-border-bottom-left-radius:1px;
+    -moz-border-radius-bottomleft:1px;
+    border-bottom-left-radius:1px;
+    text-indent:0px;
+    display:inline-block;
+    color:#636263;
+    font-family:arial;
+    font-size:22px;
+    font-weight:bold;
+    font-style:normal;
+    height:62px;
+    line-height:65px;
+    width:120px;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #ffffff;
+    margin-left: -5px;
+}#explodeButton:hover {
+    background-color:#dae6e4;
+    cursor: pointer;
+}#explodeButton:active {
+    position:relative;
+    top:1px;
+}
+/* ----------------------------------------- */
+
+.bombSvg {
+    background-image: url("../svg/bomb.svg");
+    width: 80px;
+    height: 80px;
+    display: inline-block;
 }
 
 .changableText {
@@ -301,6 +391,64 @@ body {
     transform: rotate(80deg);
     cursor: pointer;
 }
+
+.upText {
+    display: inline-block;
+    -webkit-transition: -webkit-transform 150ms cubic-bezier(0.015, 0.700, 1.000, 0.985);
+    -moz-transition: -moz-transform 150 cubic-bezier(0.015, 0.700, 1.000, 0.985);
+    -o-transition: -o-transform 150ms cubic-bezier(0.015, 0.700, 1.000, 0.985);
+    transition: transform 150ms cubic-bezier(0.015, 0.700, 1.000, 0.985);
+}
+
+.upText:hover {
+    -webkit-transform: translate(0px, -5px);
+    -moz-transform: translate(0px, -5px);
+    -o-transform: translate(0px, -5px);
+    transform: translate(0px, -5px);
+    cursor: pointer;
+}
+
+@media all and (max-width: 1023px) and (min-width: 100px) {
+    #page-wrap {
+       width: 88%;
+       min-width: 460px;
+    }
+}
+
+@media all and (max-width: 736px) and (min-width: 100px) {
+    /*  Header Stuff */
+    #page-head h1 {
+        float: none;
+    }
+
+    #page-nav ul {
+        float: left;
+    }
+
+    #page-nav ul li {
+        margin-left: 9px;
+    }
+
+    #page-nav ul li.link-about {
+        margin-left: 30px;
+    }
+
+    /*  Footer Stuff */
+    li#footerShare {
+        float: left;
+        margin-left: 0px !important;
+        margin-top: 20px;
+    }
+
+    #footerList #footerShare #footShareText {
+        margin-left: 0px;
+    }
+}
+
+@media all and (min-width: 700px) {
+
+}
+
 
 
 

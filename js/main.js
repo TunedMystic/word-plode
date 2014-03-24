@@ -12,8 +12,16 @@ var taglinePhrases = [
    "Expect the unexpected!",
 ];
 
-var emptyText = {"color": "#BCB465"};
-var occupiedText = {"color": "#222"};
+var shareUrls = {
+    "facebook"  : "https://www.facebook.com/sharer/sharer.php?u=", 
+    "twitter"   : /*"http://twitter.com/home?status="*/
+                  "http://twitter.com/share?text=" + encodeURIComponent("Exploding words are awesome #wordplode") + "&url=http://wordplode.smallcode.me"
+  }
+
+var thisWebsite = encodeURIComponent(document.location);
+
+var emptyText = {"color": "#BCB465", "text-shadow": "none"};
+var occupiedText = {"color": "#222", "text-shadow": "3px 2px 1px rgba(100, 95, 95, 0.82)"};
 
 /// --------------------------------
 
@@ -102,6 +110,12 @@ function letter(thing) {
 /// VAR: "thing" -> css selector
 function coolText(thing) {
   $(thing).lettering().children("span").addClass("coolText");
+}
+
+/// Makes "Up Text" (When you hover over it, it goes up...).
+/// VAR: "thing" -> css selector
+function upText(thing) {
+  $(thing).lettering().children("span").addClass("upText");
 }
 
 /// Takes the inputbox text and puts in the 'big-font' section
@@ -213,9 +227,11 @@ $(document).ready(function() {
      coolText( $(this) );
   });
   /// .. My name
-  coolText("#creator p a");
+  upText("#creator p a");
   /// .. "Share This"
-  coolText("#footShareText");
+  upText("#footShareText");
+  /// .. The Explode Button
+  upText("#explodeButton");
 
   /// Set-up the '#renderedText' to rumble
   $("#renderedTextP").jrumble({
@@ -223,4 +239,17 @@ $(document).ready(function() {
      y: 4,
      rotation: 5
   });
+
+  /// Set up Social Sharing buttons
+  $(".webicon.twitter").attr("href", shareUrls["twitter"] );
+  $(".webicon.facebook").attr("href", shareUrls["facebook"] + thisWebsite );
+
+  /// Default action for all HTML elements with the class "popup"
+  $(".popup").click(function(e) {
+     e.preventDefault();
+     e.stopPropagation();
+     popupCenter( $(this).attr("href"), $(this).attr("buttonInfo") );
+  });
+
 });
+
