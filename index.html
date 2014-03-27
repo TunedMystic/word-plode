@@ -41,15 +41,10 @@
         <script src="js/lib/modernizr-2.6.2.min.js"></script>
         <script>
            window.onload = function() {
-              /// If the features are supported
-              if( Modernizr.csstransitions && Modernizr.csstransforms ) {
-                var s = document.getElementById("page-notsupported");
-                s.classList.add("hidden");
-              }
-              /// Features are not supported... display error page
-              else {
-                var s = document.getElementById("page-content");
-                s.classList.add("hidden");
+              /// If features are not supported... display error page
+              if( !( Modernizr.csstransitions && Modernizr.csstransforms )/*&& Modernizr.touch )*/) {
+                document.getElementById("page-content").classList.add("hidden");
+                document.getElementById("page-notsupported").classList.remove("hidden");
               }
            };
         </script>
@@ -82,7 +77,7 @@
                          <a id="explodeButton">Explode!</a>                      
                     </div>
                 </div>
-                <div id = "page-notsupported">
+                <div id = "page-notsupported" class = "hidden">
                   <h2>Wow... whats this?</h2>
                   <hr>
                   <p>Awesome exploding words need awesome browser effects.</p>
@@ -113,13 +108,9 @@
                     </li>
                   </ul>
                 </footer>
-            </div>
+            </div> <!-- [End] page-main -->
 
-        </div>
-
-        <!--
-        
-         -->
+        </div> <!-- [End] page-wrap -->
 
 
         <!-- dfjhfhscript src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script -->

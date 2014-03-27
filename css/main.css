@@ -95,16 +95,15 @@ h1, h2 {
 }
 
 #page-wrap {
-    /*width: 88%;
-    min-width: 950px;*/
     width: 1024px;
-    min-width: 460px;
+    min-width: 320px;
     height: auto;
     padding: 17px 17px 17px 17px;
     margin: 0 auto;
 
     /*box-shadow: 0 0 0 1px black inset;*/
     margin-top: 10px;
+    margin-bottom: 17px;
     border: 6px dashed rgb(234, 196, 85);
 }
 
@@ -210,6 +209,10 @@ h1, h2 {
 
 #page-nav ul li a {
     color: #000000;
+}
+
+#page-nav ul li a:hover {
+    color: #4A4A4A;
 }
 
 #page-tagline {
@@ -408,10 +411,9 @@ h1, h2 {
     cursor: pointer;
 }
 
-@media all and (max-width: 1023px) and (min-width: 100px) {
+@media all and (max-width: 1110px) and (min-width: 100px) {
     #page-wrap {
        width: 88%;
-       min-width: 460px;
     }
 }
 
