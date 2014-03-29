@@ -124,11 +124,16 @@ function upText(thing) {
 function updateInput() {
    if( $("#explodeInput").val() == "" ) {
       $("#renderedText").text("...This will explode!!");
-      $("#renderedText").css(emptyText);
+      // $("#renderedText").css(emptyText);
+      $("#renderedText").removeClass("fullText");
+      $("#renderedText").addClass("emptyText");
+
    }
    else {
       $("#renderedText").text( $("#explodeInput").val() );
-      $("#renderedText").css(occupiedText);
+      // $("#renderedText").css(occupiedText);
+      $("#renderedText").removeClass("emptyText");
+      $("#renderedText").addClass("fullText");
    }
 }
 

@@ -42,8 +42,9 @@
         <script>
            window.onload = function() {
               /// If features are not supported... display error page
-              if( !( Modernizr.csstransitions && Modernizr.csstransforms )/*&& Modernizr.touch )*/) {
+              if( !( Modernizr.csstransitions && Modernizr.csstransforms)/*&& Modernizr.touch )*/) {
                 document.getElementById("page-content").classList.add("hidden");
+                document.getElementById("page-instructions").classList.add("hidden");
                 document.getElementById("page-notsupported").classList.remove("hidden");
               }
            };
@@ -54,7 +55,7 @@
         <div id="page-wrap">
 
             <div id="page-main">
-                <header id="page-head">
+                <header id="page-head" class="rounded">
                    <h1>Word-Plode</h1>
                    <nav id="page-nav">
                       <ul>
@@ -68,9 +69,9 @@
                   <p>{Tagline Goes Here}</p>
                </div>
 
-                <div id="page-content">
+                <div id="page-content" class="innerDivColor rounded">
                     <div id="renderedTextP">
-                       <h2 id="renderedText">{ Rendered Text goes here }</h2>
+                       <h2 id="renderedText" class="emptyText">{ Rendered Text goes here }</h2>
                     </div>
                     <div id="inputSection">
                          <input id="explodeInput" type="text" placeholder="Write Something here" maxlength="50">
@@ -80,7 +81,7 @@
 
 
 
-                <div id="page-instructions">
+                <div id="page-instructions" class="innerDivColor rounded">
                    <ul>
                      <li id="instr-bomb"> <!-- Bomb svg -->
                         <div id="bomb-svg-big"></div>
@@ -124,7 +125,7 @@
 
 
 
-                <div id = "page-notsupported" class = "hidden">
+                <div id = "page-notsupported" class = "innerDivColor hidden rounded">
                   <h2>Wow... whats this?</h2>
                   <hr>
                   <p>Awesome exploding words need awesome browser effects.</p>
@@ -136,7 +137,7 @@
                   <p>Well, your browser has to support <a href="http://www.w3schools.com/css/css3_transitions.asp" target="_blank">CSS Transitions</a> and <a href="http://www.w3schools.com/css/css3_2dtransforms.asp" target="_blank">CSS Transforms</a> for the magic to happen!</p>
                 </div>
 
-                <footer id="page-footer">
+                <footer id="page-footer" class="rounded">
                   <ul id = "footerList">
                     <li id = "creator">created by 
                       <p><a href="http://smallcode.me" target="_blank">Sandeep&nbsp;Jadoonanan</a></p>
