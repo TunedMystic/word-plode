@@ -94,6 +94,17 @@ h1, h2 {
     text-shadow: 3px 2px 1px rgba(100, 95, 95, 0.82);
 }
 
+a {
+    text-decoration: none;
+    color: #403C24;
+
+    -webkit-transition: color 200ms linear;
+}
+
+a:hover {
+    color: #28677D;
+}
+
 #page-wrap {
     width: 1024px;
     min-width: 320px;
@@ -162,11 +173,11 @@ h1, h2 {
 }
 
 #creator p a {
-    color: #000000;
+    /* color: #000000; */
 }
 
 #creator p a:hover {
-    color: #4A4A4A;
+    /* color: #4A4A4A; */
 }
 
 #footerShare {
@@ -208,11 +219,11 @@ h1, h2 {
 }
 
 #page-nav ul li a {
-    color: #000000;
+    /* color: #000000; */
 }
 
 #page-nav ul li a:hover {
-    color: #4A4A4A;
+    /* color: #4A4A4A; */
 }
 
 #page-tagline {
