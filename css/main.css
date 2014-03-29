@@ -280,11 +280,28 @@ p, h1, h2, h3, h4, h5, li, a {
 
 /* ---------------------------------- */
 
+#humansTxt {
+    margin-top: 70px;
+}
+
+#humansTxt a{
+    color: #6582AB;
+}
+
+#humansTxt a:hover{
+    color: #47CA9B;
+}
+
+
 .page-about {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box; 
     box-sizing: border-box;
     padding: 0px 15px 20px 15px;
+}
+
+.page-about ul {
+    margin-top: 20px;
 }
 
 .page-about #about-descr {

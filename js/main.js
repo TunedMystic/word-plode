@@ -252,8 +252,10 @@ $(document).ready(function() {
      upText( $(this) );
   });
 
-  /// .. About Page creator name
-  upText(".page-about p a");
+  /// .. About Page creator name, Humans.txt
+  $(".page-about p a").each(function() {
+     upText( $(this) );
+  });
 
   /// Set-up the '#renderedText' to rumble
   $("#renderedTextP").jrumble({

@@ -3,13 +3,20 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Sandeep Jadoonanan -- Creator -- @sandcoder
 
 # THANKS
 
-    <name>
+    Creators of:
+          jQuery
+          Modernizr
+          lettering.js
+          jRumble
+    Internet :D
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
     jQuery, Modernizr
+    lettering.js
+    jRumble
