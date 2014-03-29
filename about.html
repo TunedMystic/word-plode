@@ -33,8 +33,6 @@
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/webicons.css">
-        <link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:800' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,900' rel='stylesheet' type='text/css'>
 
@@ -42,7 +40,7 @@
         <script>
            window.onload = function() {
               /// If features are not supported... display error page
-              if( !( Modernizr.csstransitions && Modernizr.csstransforms )/*&& Modernizr.touch )*/) {
+              if( !(Modernizr.csstransitions && Modernizr.csstransforms) ) {
                 document.getElementById("page-content").classList.add("hidden");
                 document.getElementById("page-notsupported").classList.remove("hidden");
               }
@@ -68,18 +66,11 @@
                   <p>{Tagline Goes Here}</p>
                </div>
 
-                <div id="page-content" class="page-about">
-                    <!--div id="renderedTextP">
-                       <h2 id="renderedText">{ Rendered Text goes here }</h2>
-                    </div>
-                    <div id="inputSection">
-                         <input id="explodeInput" type="text" placeholder="Write Something here" maxlength="50">
-                         <a id="explodeButton">Explode!</a>                      
-                    </div -->
-
+                <div id="page-content" class="page-about innerDivColor rounded-big">
                     <h2>Top Secret Information:</h2>
 
-                    <p id="about-descr">Wordplode was made by <a href="http://smallcode.me">Sandeep Jadoonanan</a>, as a project
+                    <p id="about-descr">Wordplode was made by
+                      <a href="http://smallcode.me" target="_blank">Sandeep Jadoonanan</a>, as a project
                     to implement CSS3 transitions and CSS3 animations.</p>
 
                     <h3>A simple website for simple purposes.&nbsp;&nbsp;&nbsp;:)</h3>
@@ -90,6 +81,10 @@
                       <li><a href="http://letteringjs.com/" target="_blank">lettering.js</a></li>
                       <li><a href="http://jackrugile.com/jrumble/" target="_blank">jRumble</a></li>
                     </ul>
+
+                    <p id="humansTxt">
+                      <a href="http://wordplode.smallcode.me/humans.txt" target="_blank">Humans.txt</a>
+                    </p>
 
                 </div>
 
@@ -127,10 +122,7 @@
             </div> <!-- [End] page-main -->
 
         </div> <!-- [End] page-wrap -->
-
-
-        <!-- dfjhfhscript src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script -->
-        <!--dfkdjhfkdjscript>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script -->
+        
         <script src="js/lib/jquery-1.10.1.min.js"></script>
         <script src="js/lib/jquery.jrumble-1.3.min.js"></script>
         <script src="js/lib/jquery.lettering-0.6.1.min.js"></script>
@@ -138,11 +130,15 @@
 
         <script src="js/main.js"></script>
 
-        <!-- script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-49480441-1', 'smallcode.me');
+          ga('send', 'pageview');
+
+        </script>
     </body>
 </html>

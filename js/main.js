@@ -124,11 +124,16 @@ function upText(thing) {
 function updateInput() {
    if( $("#explodeInput").val() == "" ) {
       $("#renderedText").text("...This will explode!!");
-      $("#renderedText").css(emptyText);
+      // $("#renderedText").css(emptyText);
+      $("#renderedText").removeClass("fullText");
+      $("#renderedText").addClass("emptyText");
+
    }
    else {
       $("#renderedText").text( $("#explodeInput").val() );
-      $("#renderedText").css(occupiedText);
+      // $("#renderedText").css(occupiedText);
+      $("#renderedText").removeClass("emptyText");
+      $("#renderedText").addClass("fullText");
    }
 }
 
@@ -247,8 +252,10 @@ $(document).ready(function() {
      upText( $(this) );
   });
 
-  /// .. About Page creator name
-  upText(".page-about p a");
+  /// .. About Page creator name, Humans.txt
+  $(".page-about p a").each(function() {
+     upText( $(this) );
+  });
 
   /// Set-up the '#renderedText' to rumble
   $("#renderedTextP").jrumble({

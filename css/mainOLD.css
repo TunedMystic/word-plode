@@ -85,13 +85,13 @@ a {
 }
 
 body {
-    background-color: #171717;
-    /*background-image: url("../img/bg.png");*/
+    background-color: #e9e388;
+    background-image: url("../img/bg.png");
     font-family: "Lucida Sans Unicode";
 }
 
 h1, h2 {
-    text-shadow: 3px 2px 1px rgba(40, 42, 94, 0.82);
+    text-shadow: 3px 2px 1px rgba(100, 95, 95, 0.82);
 }
 
 a {
@@ -105,25 +105,14 @@ a:hover {
     color: #28677D;
 }
 
-p, h1, h2, h3, h4, h5, li, a {
-    /*color: #777777;*/
-    color: #A49F9D;
-}
-
 .rounded {
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
 }
 
-.rounded-big {
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-}
-
 .innerDivColor {
-    background-color: #101010 !important;
+    background-color: #DCD081 !important;
 }
 
 #page-wrap {
@@ -134,14 +123,14 @@ p, h1, h2, h3, h4, h5, li, a {
     margin: 0 auto;
 
     /*box-shadow: 0 0 0 1px black inset;*/
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 17px;
-    border: 6px dashed rgb(31, 32, 32);
+    border: 6px dashed rgb(234, 196, 85);
 }
 
 #page-head, #page-footer {
     overflow: auto;
-    /*background-color: #d9d47e;*/
+    background-color: #d9d47e;
     padding: 8px;
 }
 
@@ -153,8 +142,6 @@ p, h1, h2, h3, h4, h5, li, a {
     /* font-family: "Poller One", cursive;*/
     font-family: "Merriweather Sans", sans-serif;
     letter-spacing: -2px;
-    color: #BB3613;
-    text-shadow: 3px 2px 1px rgba(90, 44, 29, 0.82);
 }
 
 #page-footer {
@@ -197,12 +184,10 @@ p, h1, h2, h3, h4, h5, li, a {
 
 #creator p a {
     /* color: #000000; */
-    color: #37772A;
 }
 
 #creator p a:hover {
     /* color: #4A4A4A; */
-    color: #C79338;
 }
 
 #footerShare {
@@ -259,8 +244,7 @@ p, h1, h2, h3, h4, h5, li, a {
 #page-tagline p {
     margin: 0;
     font-family: "Lucida Sans Unicode";
-    /*font-size: 130%;*/
-    font-size: 150%;
+    font-size: 130%;
     font-style: italic;
 }
 
@@ -272,26 +256,9 @@ p, h1, h2, h3, h4, h5, li, a {
     width: 100%;
     height: auto;
     overflow: hidden;
-    border: 5px solid rgb(116, 67, 20);
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box; 
-    box-sizing: border-box;
 }
 
 /* ---------------------------------- */
-
-#humansTxt {
-    margin-top: 70px;
-}
-
-#humansTxt a{
-    color: #6582AB;
-}
-
-#humansTxt a:hover{
-    color: #47CA9B;
-}
-
 
 .page-about {
     -moz-box-sizing: border-box;
@@ -300,27 +267,14 @@ p, h1, h2, h3, h4, h5, li, a {
     padding: 0px 15px 20px 15px;
 }
 
-.page-about ul {
-    margin-top: 20px;
-}
-
 .page-about #about-descr {
     font-size: 130%;
 }
 
-.page-about #about-descr a {
-    color: #977568;
-}
-
-.page-about #about-descr a:hover {
-    color: #8F633A;
-}
-
 .page-about h2 {
     font-size: 270%;
+    text-shadow: 3px 2px 1px rgba(100, 95, 95, 0.82);
     padding: 0px 10px 0px 10px;
-    color: #37772A;
-    text-shadow: 3px 2px 1px #173F0F;
 }
 
 .page-about ul {
@@ -332,11 +286,6 @@ p, h1, h2, h3, h4, h5, li, a {
     font-size: 200%;
     font-weight: bold;
     padding: 0px 10px 0px 10px;
-    color: #619D91
-}
-
-.page-about ul li a:hover {
-    color: #28677D;
 }
 
 .page-about h3 {
@@ -356,10 +305,6 @@ p, h1, h2, h3, h4, h5, li, a {
     margin-top: 20px;
     padding-bottom: 10px;
     background-color: #DCD081;
-
-    -webkit-border-top-right-radius: 50px;
-    -moz-border-top-right-radius: 50px;
-    border-top-right-radius: 50px;
 }
 
 .coolHr {
@@ -501,14 +446,6 @@ p, h1, h2, h3, h4, h5, li, a {
     min-height: 400px;
     float: left;
     text-align: center;
-    background-color: #161210;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box; 
-    box-sizing: border-box;
-    border: 2px solid #1C130F;
 }
 
 #instr-info1 h1, h3, h5, p{
@@ -519,9 +456,6 @@ p, h1, h2, h3, h4, h5, li, a {
     font-size: 340%;
     font-family: "Merriweather Sans", sans-serif;
     padding-top: 40px;
-
-    color: #C28145;
-    text-shadow: 3px 2px 1px #44260A;
 }
 
 #instr-info1 h3 {
@@ -529,7 +463,7 @@ p, h1, h2, h3, h4, h5, li, a {
     font-size: 160%;
     margin: 0 auto;
     width: 95%;
-    color: #3E4226;
+    color: #100f4a; 
 }
 
 #instr-info1 h4 {
@@ -585,39 +519,26 @@ p, h1, h2, h3, h4, h5, li, a {
 
 #instr-info2 p.instrQuestion {
     font-size: 270%;
-    text-shadow: 3px 2px 1px rgba(64, 61, 59, 0.82);
+    text-shadow: 3px 2px 1px rgba(100, 95, 95, 0.82);
     padding: 0px 10px 0px 10px;
 }
 
 #instr-info2 ul li p {
-    /*font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 150%;*/
-    font-size: 110%;
-    color: #676463;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 150%;
 }
 
 #instr-info2 div ul li p span {
-    color: #9E2727;
+    color: #38397A;
 }
 
 #page-notsupported {
+    background-color: #DCD081;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 5px;
     text-align: center;
     font-family: "Helvetica";
     font-size: 130%;
-    border: 5px solid rgb(118, 41, 37);
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-#page-notsupported a {
-    color: #906B5C;
-}
-
-#page-notsupported a:hover {
-    color: #BD6B34;
 }
 
 #page-notsupported h2 {
@@ -652,16 +573,6 @@ p, h1, h2, h3, h4, h5, li, a {
     word-wrap: break-word;
 }
 
-.emptyText {
-    text-shadow: none;
-    color: #312823;
-}
-
-.fullText {
-    color: #B4171A;
-    text-shadow: 4px 3px 3px rgba(96, 19, 3, 0.82);
-}
-
 #inputSection {
     margin-top: 120px;
     /*margin-bottom: 20px;*/
@@ -675,26 +586,23 @@ p, h1, h2, h3, h4, h5, li, a {
     border: none;
     font-family: "Lucida Sans Unicode";
     font-size: 150%;
-    /*color: #385464;*/
-    color: #6D7377;
+    color: #A1B342;
     outline: 0px;
-    background-color: #161616;
-    letter-spacing: 1px;
 }
 
 /* Placeholder text for any input boxes */
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color: #313131;
+    color:    #00ff00;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #313131;
+    color:    #999;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #313131;
+    color:    #999;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color: #313131;
+    color:    #999;
 }
 
 #explodeButtonOriginal {
@@ -706,7 +614,7 @@ p, h1, h2, h3, h4, h5, li, a {
 /* ----------------------------------------- */
 
 #explodeButton {
-    background-color: #222C37;
+    background-color:#dae6e4;
     -webkit-border-top-left-radius:1px;
     -moz-border-radius-topleft:1px;
     border-top-left-radius:1px;
@@ -721,7 +629,7 @@ p, h1, h2, h3, h4, h5, li, a {
     border-bottom-left-radius:1px;
     text-indent:0px;
     display:inline-block;
-    color: #8199AB;
+    color:#636263;
     font-family:arial;
     font-size:22px;
     font-weight:bold;
@@ -731,10 +639,10 @@ p, h1, h2, h3, h4, h5, li, a {
     width:120px;
     text-decoration:none;
     text-align:center;
-    text-shadow: 1px 1px 0px #394055;
+    text-shadow:1px 1px 0px #ffffff;
     margin-left: -5px;
 }#explodeButton:hover {
-    background-color: #243548;
+    background-color:#dae6e4;
     cursor: pointer;
 }#explodeButton:active {
     position:relative;
@@ -768,12 +676,10 @@ p, h1, h2, h3, h4, h5, li, a {
 
 .coolText {
     display: inline-block;
-    /* -webkit-transition: -webkit-transform 300ms cubic-bezier(0.015, 0.700, 1.000, 0.985); */
-    -webkit-transition: -webkit-transform 220ms cubic-bezier(0.015, 0.700, 1.000, 0.985);
-    -moz-transition: -moz-transform 220ms cubic-bezier(0.015, 0.700, 1.000, 0.985);
-    -o-transition: -o-transform 220ms cubic-bezier(0.015, 0.700, 1.000, 0.985);
-    transition: transform 220ms cubic-bezier(0.015, 0.700, 1.000, 0.985);
-
+    -webkit-transition: -webkit-transform 300ms cubic-bezier(0.015, 0.700, 1.000, 0.985);
+    -moz-transition: -moz-transform 300ms cubic-bezier(0.015, 0.700, 1.000, 0.985);
+    -o-transition: -o-transform 300ms cubic-bezier(0.015, 0.700, 1.000, 0.985);
+    transition: transform 300ms cubic-bezier(0.015, 0.700, 1.000, 0.985);
 }
 
 .coolText:hover {
@@ -862,10 +768,6 @@ p, h1, h2, h3, h4, h5, li, a {
 
     #footerList #footerShare #footShareText {
         margin-left: 0px;
-    }
-
-    #instr-info2 ul li p {
-        padding: 0px 5px 0px 15px;
     }
 }
 

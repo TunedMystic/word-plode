@@ -33,8 +33,6 @@
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/webicons.css">
-        <link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:800' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,900' rel='stylesheet' type='text/css'>
 
@@ -42,8 +40,9 @@
         <script>
            window.onload = function() {
               /// If features are not supported... display error page
-              if( !( Modernizr.csstransitions && Modernizr.csstransforms )/*&& Modernizr.touch )*/) {
+              if( !(Modernizr.csstransitions && Modernizr.csstransforms) ) {
                 document.getElementById("page-content").classList.add("hidden");
+                document.getElementById("page-instructions").classList.add("hidden");
                 document.getElementById("page-notsupported").classList.remove("hidden");
               }
            };
@@ -54,7 +53,7 @@
         <div id="page-wrap">
 
             <div id="page-main">
-                <header id="page-head">
+                <header id="page-head" class="rounded">
                    <h1>Word-Plode</h1>
                    <nav id="page-nav">
                       <ul>
@@ -68,9 +67,9 @@
                   <p>{Tagline Goes Here}</p>
                </div>
 
-                <div id="page-content">
+                <div id="page-content" class="innerDivColor rounded">
                     <div id="renderedTextP">
-                       <h2 id="renderedText">{ Rendered Text goes here }</h2>
+                       <h2 id="renderedText" class="emptyText">{ Rendered Text goes here }</h2>
                     </div>
                     <div id="inputSection">
                          <input id="explodeInput" type="text" placeholder="Write Something here" maxlength="50">
@@ -80,7 +79,7 @@
 
 
 
-                <div id="page-instructions">
+                <div id="page-instructions" class="innerDivColor rounded">
                    <ul>
                      <li id="instr-bomb"> <!-- Bomb svg -->
                         <div id="bomb-svg-big"></div>
@@ -124,7 +123,7 @@
 
 
 
-                <div id = "page-notsupported" class = "hidden">
+                <div id = "page-notsupported" class = "innerDivColor hidden rounded">
                   <h2>Wow... whats this?</h2>
                   <hr>
                   <p>Awesome exploding words need awesome browser effects.</p>
@@ -136,7 +135,7 @@
                   <p>Well, your browser has to support <a href="http://www.w3schools.com/css/css3_transitions.asp" target="_blank">CSS Transitions</a> and <a href="http://www.w3schools.com/css/css3_2dtransforms.asp" target="_blank">CSS Transforms</a> for the magic to happen!</p>
                 </div>
 
-                <footer id="page-footer">
+                <footer id="page-footer" class="rounded">
                   <ul id = "footerList">
                     <li id = "creator">created by 
                       <p><a href="http://smallcode.me" target="_blank">Sandeep&nbsp;Jadoonanan</a></p>
@@ -159,9 +158,6 @@
 
         </div> <!-- [End] page-wrap -->
 
-
-        <!-- dfjhfhscript src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script -->
-        <!--dfkdjhfkdjscript>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script -->
         <script src="js/lib/jquery-1.10.1.min.js"></script>
         <script src="js/lib/jquery.jrumble-1.3.min.js"></script>
         <script src="js/lib/jquery.lettering-0.6.1.min.js"></script>
@@ -170,11 +166,15 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
-        <!-- script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-49480441-1', 'smallcode.me');
+          ga('send', 'pageview');
+
+        </script>
     </body>
 </html>
