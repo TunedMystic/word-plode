@@ -16,7 +16,7 @@ var shareUrls = {
     "facebook"  : "https://www.facebook.com/sharer/sharer.php?u=", 
     "twitter"   : /*"http://twitter.com/home?status="*/
                   "http://twitter.com/share?text=" + encodeURIComponent("Exploding words are awesome #wordplode") + "&url=http://wordplode.smallcode.me"
-  }
+}
 
 var thisWebsite = encodeURIComponent(document.location);
 
@@ -238,6 +238,17 @@ $(document).ready(function() {
   /// .. Information Text
   coolText("#instr-info1 h1");
   coolText("#instr-info2 p.instrQuestion");
+
+  /// .. About Page title
+  coolText(".page-about h2");
+
+  /// .. About Page links
+  $(".page-about ul li a").each(function() {
+     upText( $(this) );
+  });
+
+  /// .. About Page creator name
+  upText(".page-about p a");
 
   /// Set-up the '#renderedText' to rumble
   $("#renderedTextP").jrumble({
