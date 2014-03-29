@@ -5,10 +5,10 @@
    <!-- Fuse -->
    <g>
       <rect x="23" y="8" width="4" height="15" 
-      	      style="fill: #C9C3B8;"/>
-      <circle cx="25" cy="7"  r="6"
+      	      style="fill: #9C978E;"/>
+      <circle cx="25" cy="9"  r="6"
               style="fill: #F14153;" />
-      <circle cx="25" cy="7"  r="4"
+      <circle cx="25" cy="9"  r="4"
               style="fill: #E9C061;" />
    </g>
 

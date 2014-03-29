@@ -109,12 +109,14 @@ function letter(thing) {
 /// Makes "Cool Text" (When you hover over it, it rotates...).
 /// VAR: "thing" -> css selector
 function coolText(thing) {
+  $(thing).html( fillWhitespace(thing) );
   $(thing).lettering().children("span").addClass("coolText");
 }
 
 /// Makes "Up Text" (When you hover over it, it goes up...).
 /// VAR: "thing" -> css selector
 function upText(thing) {
+  $(thing).html( fillWhitespace(thing) );
   $(thing).lettering().children("span").addClass("upText");
 }
 
@@ -232,6 +234,10 @@ $(document).ready(function() {
   upText("#footShareText");
   /// .. The Explode Button
   upText("#explodeButton");
+
+  /// .. Information Text
+  coolText("#instr-info1 h1");
+  coolText("#instr-info2 p.instrQuestion");
 
   /// Set-up the '#renderedText' to rumble
   $("#renderedTextP").jrumble({

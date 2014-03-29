@@ -237,6 +237,237 @@ h1, h2 {
     overflow: hidden;
 }
 
+#page-instructions {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    background-color: #DCD081;
+}
+
+.coolHr {
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 80%;
+    border-style: none none;
+    background-color: #353333;
+}
+
+.coolHr2 {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 90%;
+    border-style: none none;
+    background-color: #353333;
+}
+
+#page-instructions ul {
+    list-style: none;
+}
+
+#instr-bomb {
+    width: 40%;
+    float: left;
+}
+
+#bomb-svg-big {
+    background-image: url('../svg/bomb.svg');
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    /*-webkit-animation: bomb-rotate 5s linear infinite;*/
+    /*-webkit-animation: bomb-pop 5s linear infinite;*/
+    -webkit-animation: bomb-roll 12s linear infinite;
+}
+
+@-webkit-keyframes bomb-roll {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    40% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    41% {
+        -webkit-transform: rotate(4deg);
+        -moz-transform: rotate(4deg);
+        -o-transform: rotate(4deg);
+        transform: rotate(4deg);
+    }
+
+    42% {
+        -webkit-transform: rotate(-4deg);
+        -moz-transform: rotate(-4deg);
+        -o-transform: rotate(-4deg);
+        transform: rotate(-4deg);
+    }
+
+    43% {
+        -webkit-transform: rotate(10deg);
+        -moz-transform: rotate(10deg);
+        -o-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+
+    44% {
+        -webkit-transform: rotate(-10deg);
+        -moz-transform: rotate(-10deg);
+        -o-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+
+    45% {
+       -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    90% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    91% {
+        -webkit-transform: rotate(4deg);
+        -moz-transform: rotate(4deg);
+        -o-transform: rotate(4deg);
+        transform: rotate(4deg);
+    }
+
+    92% {
+        -webkit-transform: rotate(-4deg);
+        -moz-transform: rotate(-4deg);
+        -o-transform: rotate(-4deg);
+        transform: rotate(-4deg);
+    }
+
+    93% {
+        -webkit-transform: rotate(10deg);
+        -moz-transform: rotate(10deg);
+        -o-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+
+    94% {
+        -webkit-transform: rotate(-10deg);
+        -moz-transform: rotate(-10deg);
+        -o-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+
+    95% {
+       -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+#instr-info1 {
+    width: 60%;
+    min-height: 400px;
+    float: left;
+    text-align: center;
+}
+
+#instr-info1 h1, h3, h5, p{
+    margin: 0;
+}
+
+#instr-info1 h1{
+    font-size: 340%;
+    font-family: "Merriweather Sans", sans-serif;
+    padding-top: 40px;
+}
+
+#instr-info1 h3 {
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 160%;
+    margin: 0 auto;
+    width: 95%;
+    color: #100f4a; 
+}
+
+#instr-info1 h4 {
+    /*margin-top: 40px;*/
+    margin-bottom: 10px;
+}
+
+#instr-info1 div {
+    /*margin-top: 20px;*/
+}
+
+#instr-info1 div p{
+    display: inline-block;
+    vertical-align: top;
+    /*padding-top: 28px;*/
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+#warning-sign {
+    background-image: url('../svg/warning-sign.svg');
+    width: 50px;
+    height: 42px;
+    display: inline-block;
+}
+
+.simpleSpacer {
+    width: 20px;
+    height: 10px;
+}
+
+#instr-info2 {
+    text-align: center;
+}
+
+#instr-info2 div {
+    position: relative;
+    display: inline-block;
+}
+#instr-info2 ul {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#instr-info2 ul li {
+    text-align: left;
+}
+
+#instr-info2 p {
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 170%;
+}
+
+#instr-info2 p.instrQuestion {
+    font-size: 270%;
+    text-shadow: 3px 2px 1px rgba(100, 95, 95, 0.82);
+    padding: 0px 10px 0px 10px;
+}
+
+#instr-info2 ul li p {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 150%;
+}
+
+#instr-info2 div ul li p span {
+    color: #38397A;
+}
+
 #page-notsupported {
     background-color: #DCD081;
     padding: 10px;
@@ -414,6 +645,35 @@ h1, h2 {
 @media all and (max-width: 1110px) and (min-width: 100px) {
     #page-wrap {
        width: 88%;
+    }
+}
+
+@media all and (max-width: 1000px) and (min-width: 100px) {
+    #page-instructions ul li {
+        width: 100%;
+        float: none;
+    }
+
+    #instr-info1 {
+        min-height: 0px;
+    }
+
+    #instr-info1 h1 {
+        padding-top: 15px;
+    }
+}
+
+@media all and (max-width: 470px) and (min-width: 100px) {
+    #bomb-svg-big {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media all and (max-width: 600px) and (min-width: 100px) {
+    #warning-sign {
+        display: block;
+        margin: 0 auto;
     }
 }
 
