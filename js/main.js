@@ -68,14 +68,13 @@ function randomShoot(thing) {
 /// Applies a random CSS translate on each span of a 'lettered' text.
 /// VAR: "thing" -> css selector
 function explode(thing) {
-   console.log("Explode start");
+   //console.log("Explode start");
 
    $(thing + " span").each(function(i, el){
      /// Apply a random translation to each span
      randomShoot(el);
    });
-   ///$("#word").trigger("webkitAnimationEnd");
-   console.log("Explode done");
+   //console.log("Explode done");
 }
 
 
@@ -99,10 +98,10 @@ function fillWhitespace(thing) {
 /// Break some text into individual characters.
 /// VAR: "thing" -> css selector
 function letter(thing) {
-   console.log("Lettering start");
+   //console.log("Lettering start");
    $(thing).html( fillWhitespace($(thing)) );
    $(thing).lettering().children("span").addClass("changableText");
-   console.log("Lettering done");
+   //console.log("Lettering done");
    return;
 }
 
@@ -154,16 +153,16 @@ function explodeText() {
 
       /// Begin Rumbling the text
       setTimeout(function() {
-         console.log("start start");
+         //console.log("start start");
          $("#renderedTextP").trigger("startRumble");
-         console.log("start stop");
+         //console.log("start stop");
       }, 50);
 
       /// Stop Rumbling the text
       setTimeout(function() {
-         console.log("stop start");
+         //console.log("stop start");
          $("#renderedTextP").trigger("stopRumble");
-         console.log("stop stop");
+         //console.log("stop stop");
       }, 550);
 
       /// Explode the text randomly
@@ -177,7 +176,7 @@ function explodeText() {
 /// Take action when the animation ends.
 function lettersEndEvent() {
   $("#renderedText span:eq(0)").on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
-    console.log("...The animation has ended");
+    //console.log("...The animation has ended");
     $("#explodeInput").val("");
     updateInput();
   });

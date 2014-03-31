@@ -85,7 +85,8 @@ a {
 }
 
 body {
-    background-color: #171717;
+    /*background-color: #171717;*/
+    background-color: #13272D;
     /*background-image: url("../img/bg.png");*/
     font-family: "Lucida Sans Unicode";
 }
@@ -136,7 +137,8 @@ p, h1, h2, h3, h4, h5, li, a {
     /*box-shadow: 0 0 0 1px black inset;*/
     margin-top: 30px;
     margin-bottom: 17px;
-    border: 6px dashed rgb(31, 32, 32);
+    /*border: 6px dashed rgb(31, 32, 32);*/
+    border: 6px dashed rgb(109, 115, 115);
 }
 
 #page-head, #page-footer {
@@ -154,7 +156,8 @@ p, h1, h2, h3, h4, h5, li, a {
     font-family: "Merriweather Sans", sans-serif;
     letter-spacing: -2px;
     color: #BB3613;
-    text-shadow: 3px 2px 1px rgba(90, 44, 29, 0.82);
+    /*text-shadow: 3px 2px 1px rgba(90, 44, 29, 0.82);*/
+    text-shadow: 3px 2px 1px rgba(40, 13, 3, 0.82);
 }
 
 #page-footer {
@@ -196,8 +199,8 @@ p, h1, h2, h3, h4, h5, li, a {
 }
 
 #creator p a {
-    /* color: #000000; */
-    color: #37772A;
+    /*color: #37772A;*/
+    color: #269C0E;
 }
 
 #creator p a:hover {
@@ -658,8 +661,11 @@ p, h1, h2, h3, h4, h5, li, a {
 }
 
 .fullText {
-    color: #B4171A;
-    text-shadow: 4px 3px 3px rgba(96, 19, 3, 0.82);
+    /*color: #C51013;
+    text-shadow: 4px 3px 3px rgba(96, 19, 3, 0.82);*/
+
+    color: #CA0508;
+    text-shadow: 4px 3px 3px rgba(75, 15, 3, 0.82);
 }
 
 #inputSection {
@@ -826,6 +832,23 @@ p, h1, h2, h3, h4, h5, li, a {
         width: 250px;
         height: 250px;
     }
+
+    #page-head h1 {
+        font-size: 280%;
+    }
+
+    #instr-info2 div {
+        font-size: 78%;
+    }
+
+    #instr-info2 p.instrQuestion {
+        font-size: 160%;
+    }
+
+    #instr-info1 h1 {
+        font-size: 280%;
+    }
+
 }
 
 @media all and (max-width: 600px) and (min-width: 100px) {
